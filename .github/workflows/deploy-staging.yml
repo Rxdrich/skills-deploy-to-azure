@@ -20,10 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16' # O considera actualizar a una versión más reciente, como 20.
-
-      - name: Install npm dependencies
-        run: npm install
+          node-version: '20'
 
       - name: Run build script
         run: npm run build
@@ -32,6 +29,9 @@ jobs:
         with:
           name: webpack artifacts
           path: public/
+
+      - name: Install npm dependencies
+        run: npm install
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
